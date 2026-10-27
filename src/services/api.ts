@@ -2,7 +2,9 @@ import { User, AdminUser, Trade, CryptoPair, WalletRequest, AdminStats, BankDeta
 import { DEFAULT_PAIRS } from '../constants/initialPairs';
 import { localStore } from './localFallbackStore';
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL.replace(/\/+$/, '')}/api` 
+  : '/api';
 
 const rawFetch = globalThis.fetch;
 

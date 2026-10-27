@@ -389,7 +389,11 @@ export const localStore = {
     const admin = admins.find(a => a.id === adminId || a.username.toLowerCase() === (adminId || '').toLowerCase());
 
     const isOwnerOrSuper = !admin || admin.isOwner || admin.role === 'SUPER_ADMIN' || admin.username === 'jerry@786' || admin.username === 'am9318930@gmail.com';
-    const scopedUsers = isOwnerOrSuper ? users : users.filter(u => u.referredByAdminId === admin.id);
+    const scopedUsers = isOwnerOrSuper ? users : users.filter(u => 
+      u.referredByAdminId === admin.id ||
+      (u.referralCodeUsed && u.referralCodeUsed.trim().toUpperCase().replace(/[^A-Z0-9]/g, '') === (admin.referralCode || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '')) ||
+      (u.referredByAdminUsername && u.referredByAdminUsername.toLowerCase() === admin.username.toLowerCase())
+    );
 
     const safeUsers = scopedUsers.map(u => ({
       ...u,

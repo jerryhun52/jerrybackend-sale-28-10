@@ -2120,11 +2120,20 @@ async function startServer() {
     if (!admin || isSupremeOwnerAdmin(admin) || isMasterAdmin321(admin) || admin.role === 'SUPER_ADMIN') {
       return { isSubAdmin: false, scopedUsers: users, scopedAdmin: admin };
     }
-    const scopedUsers = users.filter(u => 
-      u.referredByAdminId === admin.id ||
-      (u.referralCodeUsed && cleanMobileInput(u.referralCodeUsed).toUpperCase() === cleanMobileInput(admin.referralCode).toUpperCase()) ||
-      (u.referredByAdminUsername && cleanMobileInput(u.referredByAdminUsername).toLowerCase() === cleanMobileInput(admin.username).toLowerCase())
-    );
+    const scopedUsers = users.filter(u => {
+      const uRef = cleanMobileInput(u.referralCodeUsed || '').toUpperCase();
+      const uRefClean = uRef.replace(/[^A-Z0-9]/g, '');
+      const aRef = cleanMobileInput(admin.referralCode || '').toUpperCase();
+      const aRefClean = aRef.replace(/[^A-Z0-9]/g, '');
+      const aUserClean = cleanMobileInput(admin.username || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+      const uAdminUserClean = cleanMobileInput(u.referredByAdminUsername || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+      return (
+        u.referredByAdminId === admin.id ||
+        (Boolean(uRef && aRef) && (uRef === aRef || (Boolean(uRefClean) && uRefClean === aRefClean))) ||
+        (Boolean(uAdminUserClean && aUserClean) && uAdminUserClean === aUserClean)
+      );
+    });
     return { isSubAdmin: true, scopedUsers, scopedAdmin: admin };
   };
 
@@ -2606,15 +2615,22 @@ async function startServer() {
     next(err);
   });
 
-  // Vite middleware for development vs static production serving
-  if (process.env.NODE_ENV !== 'production') {
+  // Strictly use Vite middleware in development; only serve static dist when NODE_ENV is 'production'
+  const isProductionBuild = process.env.NODE_ENV === 'production';
+
+  if (!isProductionBuild) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), 'dist');
+    const distCandidate1 = path.join(process.cwd(), 'dist');
+    const distCandidate2 = __dirname;
+    const distPath = fs.existsSync(path.join(distCandidate1, 'index.html'))
+      ? distCandidate1
+      : distCandidate2;
+    console.log(`[PRODUCTION] Serving static client build from: ${distPath}`);
     app.use(express.static(distPath));
     app.get('*', (req: Request, res: Response) => {
       res.sendFile(path.join(distPath, 'index.html'));
