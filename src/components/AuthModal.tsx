@@ -441,15 +441,24 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                       autoCorrect="off"
                       autoComplete="off"
                       spellCheck={false}
-                      placeholder="Enter Agent / Referral Code (e.g. MASTER321)"
+                      placeholder="Enter Agent / Referral Code (e.g. tesla@123)"
                       value={referralCode}
                       onChange={(e) => setReferralCode(e.target.value)}
                       className="w-full pl-10 pr-4 py-2.5 bg-[#060c18] border border-cyan-500/40 focus:border-cyan-400 rounded-2xl text-xs sm:text-sm font-mono text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-cyan-400 transition"
                     />
                   </div>
-                  <p className="text-[10px] text-slate-400 mt-1">
-                    Registration is by invitation only. Contact your agent or administrator for an invitation code.
-                  </p>
+                  <div className="flex items-center justify-between text-[10px] text-slate-400 mt-1">
+                    <span>Registration by invitation only</span>
+                    {!referralCode && (
+                      <button
+                        type="button"
+                        onClick={() => setReferralCode('tesla@123')}
+                        className="text-cyan-400 hover:text-cyan-300 font-mono font-bold cursor-pointer"
+                      >
+                        Use tesla@123
+                      </button>
+                    )}
+                  </div>
                 </div>
               </>
             ) : (

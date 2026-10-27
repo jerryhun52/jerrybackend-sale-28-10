@@ -1,6 +1,57 @@
 {
   "users": [
     {
+      "id": "user_12xy28u",
+      "name": "teslatester",
+      "username": "teslatester",
+      "email": "teslatester@flowcoin.com",
+      "password": "password123",
+      "balance": 0,
+      "freezeBalance": 0,
+      "creditScore": 100,
+      "currency": "USD",
+      "status": "active",
+      "tradeMode": "AUTO",
+      "referredByAdminId": "admin_owner_am9318930",
+      "referredByAdminUsername": "am9318930@gmail.com",
+      "referralCodeUsed": "tesla@123",
+      "createdAt": "2026-10-27T22:22:57.217Z"
+    },
+    {
+      "id": "user_ncler9a",
+      "name": "testuser2",
+      "username": "testuser2",
+      "email": "testuser2@flowcoin.com",
+      "password": "testpassword123",
+      "balance": 0,
+      "freezeBalance": 0,
+      "creditScore": 100,
+      "currency": "USD",
+      "status": "active",
+      "tradeMode": "AUTO",
+      "referredByAdminId": "admin_owner_am9318930",
+      "referredByAdminUsername": "am9318930@gmail.com",
+      "referralCodeUsed": "TESLA123",
+      "createdAt": "2026-10-27T22:12:55.072Z"
+    },
+    {
+      "id": "user_i2kvo3l",
+      "name": "testuser",
+      "username": "testuser",
+      "email": "testuser@flowcoin.com",
+      "password": "testpassword123",
+      "balance": 0,
+      "freezeBalance": 0,
+      "creditScore": 100,
+      "currency": "USD",
+      "status": "active",
+      "tradeMode": "AUTO",
+      "referredByAdminId": "admin_owner_am9318930",
+      "referredByAdminUsername": "am9318930@gmail.com",
+      "referralCodeUsed": "TESLA123",
+      "createdAt": "2026-10-27T22:11:57.303Z"
+    },
+    {
       "id": "user_venom",
       "name": "Venom Trader",
       "username": "venom",
@@ -71,6 +122,14 @@
       "isHiddenOwner": true,
       "loginHistory": [
         {
+          "id": "log_1793139797997_ql5n6",
+          "timestamp": "2026-10-27T22:23:17.997Z",
+          "ip": "127.0.0.1",
+          "userAgent": "curl/7.88.1",
+          "device": "Desktop Device",
+          "location": "Web Client / SSL"
+        },
+        {
           "id": "log_1793137648575_5lhwa",
           "timestamp": "2026-10-27T21:47:28.575Z",
           "ip": "127.0.0.1",
@@ -79,7 +138,7 @@
           "location": "Web Client / SSL"
         }
       ],
-      "lastLoginTime": "2026-10-27T21:47:28.575Z"
+      "lastLoginTime": "2026-10-27T22:23:17.997Z"
     },
     {
       "id": "admin_owner_am9318930",
@@ -87,7 +146,7 @@
       "password": "tesla@123",
       "name": "Main Owner (AM)",
       "role": "SUPER_ADMIN",
-      "referralCode": "TESLA123",
+      "referralCode": "tesla@123",
       "permissions": {
         "manageUsers": true,
         "manageTrades": true,
@@ -98,6 +157,30 @@
       "createdAt": "2026-10-27T21:40:00.000Z",
       "isHiddenOwner": true,
       "loginHistory": [
+        {
+          "id": "log_1793139792149_kpez0",
+          "timestamp": "2026-10-27T22:23:12.149Z",
+          "ip": "127.0.0.1",
+          "userAgent": "curl/7.88.1",
+          "device": "Desktop Device",
+          "location": "Web Client / SSL"
+        },
+        {
+          "id": "log_1793139785027_c8rri",
+          "timestamp": "2026-10-27T22:23:05.027Z",
+          "ip": "127.0.0.1",
+          "userAgent": "curl/7.88.1",
+          "device": "Desktop Device",
+          "location": "Web Client / SSL"
+        },
+        {
+          "id": "log_1793139444547_gft83",
+          "timestamp": "2026-10-27T22:17:24.547Z",
+          "ip": "127.0.0.1",
+          "userAgent": "curl/7.88.1",
+          "device": "Desktop Device",
+          "location": "Web Client / SSL"
+        },
         {
           "id": "log_1793137633261_jduwo",
           "timestamp": "2026-10-27T21:47:13.261Z",
@@ -115,7 +198,7 @@
           "location": "Web Client / SSL"
         }
       ],
-      "lastLoginTime": "2026-10-27T21:47:13.261Z"
+      "lastLoginTime": "2026-10-27T22:23:12.149Z"
     },
     {
       "id": "admin_master",

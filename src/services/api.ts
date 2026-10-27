@@ -3,6 +3,30 @@ import { DEFAULT_PAIRS } from '../constants/initialPairs';
 
 const API_BASE = '/api';
 
+const rawFetch = globalThis.fetch;
+
+// Safe fetch wrapper that handles HTML/non-JSON responses without syntax crashes
+async function apiFetch(input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
+  const res = await rawFetch(input, init);
+  const originalJson = res.json.bind(res);
+  res.json = async () => {
+    try {
+      return await originalJson();
+    } catch (e) {
+      if (!res.ok) {
+        if (res.status === 502 || res.status === 503 || res.status === 504) {
+          return { error: 'Server connection is warming up. Please try again in 3 seconds.' };
+        }
+        return { error: `Server request failed with status ${res.status}. Please try again.` };
+      }
+      return { error: 'Connection temporarily interrupted. Please refresh or try again.' };
+    }
+  };
+  return res;
+}
+
+const fetch = apiFetch;
+
 export const api = {
   // Auth
   async register(

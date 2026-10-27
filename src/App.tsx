@@ -308,6 +308,16 @@ export default function App() {
     const urlParams = new URLSearchParams(window.location.search);
     const hasLoginAction = urlParams.get('action') === 'login';
     const hasRefParam = urlParams.get('ref') || urlParams.get('invite') || urlParams.get('code');
+    const hasAdminPrompt = urlParams.has('admin') || window.location.hash === '#admin' || window.location.pathname === '/admin' || window.location.pathname.startsWith('/admin/');
+
+    const savedAdmin = localStorage.getItem('crypto_admin');
+    if (hasAdminPrompt) {
+      if (!savedAdmin) {
+        setAdminModalOpen(true);
+      } else {
+        changeActiveTab('admin');
+      }
+    }
 
     // If user is not logged in and has an invitation or login prompt, open auth modal
     if (!savedUser && (hasLoginAction || hasRefParam)) {
@@ -315,7 +325,7 @@ export default function App() {
     }
 
     // Clean action param from address bar so standard page refresh never triggers unexpected auth popup
-    if (hasLoginAction) {
+    if (hasLoginAction || (hasAdminPrompt && window.location.pathname === '/admin')) {
       try {
         window.history.replaceState({}, document.title, window.location.pathname);
       } catch (e) {}
