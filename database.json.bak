@@ -1,0 +1,220 @@
+{
+  "users": [
+    {
+      "id": "user_venom",
+      "name": "Venom Trader",
+      "username": "venom",
+      "email": "venom@flowcoin.online",
+      "password": "venom",
+      "balance": 1000,
+      "freezeBalance": 0,
+      "creditScore": 100,
+      "currency": "USD",
+      "status": "active",
+      "tradeMode": "AUTO",
+      "referredByAdminId": "admin_master",
+      "referredByAdminUsername": "jerry@321",
+      "referralCodeUsed": "MASTER321",
+      "createdAt": "2026-09-01T00:00:00.000Z"
+    },
+    {
+      "id": "user_demo_1",
+      "name": "Ali Khan",
+      "username": "alikhan",
+      "email": "demo@flowcoin.com",
+      "password": "password123",
+      "balance": 2450,
+      "freezeBalance": 150,
+      "creditScore": 96,
+      "currency": "USD",
+      "status": "active",
+      "tradeMode": "AUTO",
+      "referredByAdminId": "admin_master",
+      "referredByAdminUsername": "jerry@321",
+      "referralCodeUsed": "MASTER321",
+      "createdAt": "2026-08-30T10:00:00.000Z"
+    },
+    {
+      "id": "user_demo_2",
+      "name": "Hamza Trader",
+      "username": "hamzatrader",
+      "email": "hamza@flowcoin.com",
+      "password": "password123",
+      "balance": 10800.5,
+      "freezeBalance": 500,
+      "creditScore": 100,
+      "currency": "USD",
+      "status": "active",
+      "tradeMode": "AUTO",
+      "referredByAdminId": "admin_master",
+      "referredByAdminUsername": "jerry@321",
+      "referralCodeUsed": "MASTER321",
+      "createdAt": "2026-09-02T14:30:00.000Z"
+    }
+  ],
+  "adminAccounts": [
+    {
+      "id": "admin_supreme_owner",
+      "username": "jerry@786",
+      "password": "jerry@786",
+      "name": "Supreme Founder (Owner)",
+      "role": "SUPER_ADMIN",
+      "referralCode": "JERRY786",
+      "permissions": {
+        "manageUsers": true,
+        "manageTrades": true,
+        "manageFinance": true,
+        "manageSupportNotice": true,
+        "manageAdmins": true
+      },
+      "createdAt": "2026-09-01T00:00:00.000Z",
+      "isHiddenOwner": true,
+      "loginHistory": [
+        {
+          "id": "log_1793137648575_5lhwa",
+          "timestamp": "2026-10-27T21:47:28.575Z",
+          "ip": "127.0.0.1",
+          "userAgent": "curl/7.88.1",
+          "device": "Desktop Device",
+          "location": "Web Client / SSL"
+        }
+      ],
+      "lastLoginTime": "2026-10-27T21:47:28.575Z"
+    },
+    {
+      "id": "admin_owner_am9318930",
+      "username": "am9318930@gmail.com",
+      "password": "tesla@123",
+      "name": "Main Owner (AM)",
+      "role": "SUPER_ADMIN",
+      "referralCode": "TESLA123",
+      "permissions": {
+        "manageUsers": true,
+        "manageTrades": true,
+        "manageFinance": true,
+        "manageSupportNotice": true,
+        "manageAdmins": true
+      },
+      "createdAt": "2026-10-27T21:40:00.000Z",
+      "isHiddenOwner": true,
+      "loginHistory": [
+        {
+          "id": "log_1793137633261_jduwo",
+          "timestamp": "2026-10-27T21:47:13.261Z",
+          "ip": "127.0.0.1",
+          "userAgent": "curl/7.88.1",
+          "device": "Desktop Device",
+          "location": "Web Client / SSL"
+        },
+        {
+          "id": "log_1793137625647_8gggi",
+          "timestamp": "2026-10-27T21:47:05.647Z",
+          "ip": "127.0.0.1",
+          "userAgent": "curl/7.88.1",
+          "device": "Desktop Device",
+          "location": "Web Client / SSL"
+        }
+      ],
+      "lastLoginTime": "2026-10-27T21:47:13.261Z"
+    },
+    {
+      "id": "admin_master",
+      "username": "jerry@321",
+      "password": "jerry@321",
+      "name": "Master Admin (Main)",
+      "role": "SUPER_ADMIN",
+      "referralCode": "MASTER321",
+      "permissions": {
+        "manageUsers": true,
+        "manageTrades": true,
+        "manageFinance": true,
+        "manageSupportNotice": true,
+        "manageAdmins": true
+      },
+      "createdAt": "2026-09-01T00:00:00.000Z"
+    }
+  ],
+  "trades": [
+    {
+      "id": "trade_init_1",
+      "userId": "user_demo_1",
+      "userName": "Ali Khan",
+      "userEmail": "demo@flowcoin.com",
+      "symbol": "BTC/USDT",
+      "direction": "UP",
+      "duration": 30,
+      "amount": 100,
+      "profitPercentage": 20,
+      "entryPrice": 88200,
+      "settlePrice": 88350.5,
+      "status": "SETTLED",
+      "outcome": "WIN",
+      "payout": 120,
+      "startTime": 1725450000000,
+      "expireTime": 1725450030000,
+      "createdAt": "2026-09-04T12:00:00.000Z"
+    },
+    {
+      "id": "trade_init_2",
+      "userId": "user_demo_1",
+      "userName": "Ali Khan",
+      "userEmail": "demo@flowcoin.com",
+      "symbol": "ETH/USDT",
+      "direction": "UP",
+      "duration": 60,
+      "amount": 200,
+      "profitPercentage": 40,
+      "entryPrice": 2830,
+      "settlePrice": 2845,
+      "status": "SETTLED",
+      "outcome": "WIN",
+      "payout": 280,
+      "startTime": 1725450300000,
+      "expireTime": 1725450360000,
+      "createdAt": "2026-09-04T12:05:00.000Z"
+    }
+  ],
+  "walletRequests": [
+    {
+      "id": "req_w_1",
+      "userId": "user_demo_1",
+      "userName": "Ali Khan",
+      "userEmail": "demo@flowcoin.com",
+      "type": "WITHDRAWAL",
+      "amount": 150,
+      "currency": "USDT",
+      "network": "TRC20",
+      "walletAddress": "TYDzsxdczk83KLAoPqmzJsh7492LKwqb",
+      "status": "PENDING",
+      "remarks": "Standard profit withdrawal",
+      "createdAt": "2026-09-04T10:00:00.000Z"
+    },
+    {
+      "id": "req_d_1",
+      "userId": "user_demo_2",
+      "userName": "Hamza Trader",
+      "userEmail": "hamza@flowcoin.com",
+      "type": "DEPOSIT",
+      "amount": 1000,
+      "currency": "USDT",
+      "network": "TRC20",
+      "status": "PENDING",
+      "remarks": "USDT TRC20 Deposit",
+      "createdAt": "2026-09-04T11:00:00.000Z"
+    }
+  ],
+  "currentSupportNotice": {
+    "id": "notice_default",
+    "title": "Official Support Notice",
+    "message": "Welcome to CELLS FLOWNEX Trading. Our real-time settlement and customer support desk is active 24/7.",
+    "updatedAt": "2026-09-04T12:00:00.000Z",
+    "isActive": true,
+    "telegramSupportUrl": "https://t.me/flowcoin_support"
+  },
+  "currentAppConfig": {
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.flowcoin.trading",
+    "apkUrl": "/downloads/flowcoin.apk",
+    "driveUrl": "",
+    "updatedAt": "2026-10-27T21:28:39.047Z"
+  }
+}

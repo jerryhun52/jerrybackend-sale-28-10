@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="flowBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Rounded Badge -->
+  <rect width="64" height="64" rx="18" fill="url(#flowBg)" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="16.5" stroke="url(#flowGrad)" stroke-width="3" />
+  
+  <!-- Outer Glow Ring -->
+  <circle cx="32" cy="32" r="22" stroke="url(#flowGrad)" stroke-width="3" stroke-linecap="round" stroke-dasharray="100 20" />
+  
+  <!-- Inner Dynamic Flow Nodes -->
+  <path d="M20 32C20 25.3726 25.3726 20 32 20C38.6274 20 44 25.3726 44 32C44 38.6274 38.6274 44 32 44C25.3726 44 20 38.6274 20 32Z" stroke="url(#goldGrad)" stroke-width="3.5" />
+  
+  <!-- Central Lightning / Growth Ascending Indicator -->
+  <path d="M32 14V50" stroke="#bae6fd" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M22 23L42 41" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+  <circle cx="42" cy="23" r="3.5" fill="#38bdf8" />
+  <circle cx="22" cy="41" r="3.5" fill="#06b6d4" />
+</svg>
